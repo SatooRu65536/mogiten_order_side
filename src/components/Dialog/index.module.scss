@@ -1,0 +1,31 @@
+.dialog {
+  padding: 20px;
+  margin: auto;
+  border: none;
+  border-radius: 10px;
+
+  &::backdrop {
+    opacity: 0;
+    background: rgba(0, 0, 0, 0.5);
+  }
+
+  &:modal::backdrop {
+    opacity: 1;
+    animation: fadein 0.15s ease-in;
+  }
+
+  .content {
+    $size: 256px;
+    width: $size;
+    height: $size;
+  }
+}
+
+@keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

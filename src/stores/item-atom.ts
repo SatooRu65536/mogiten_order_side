@@ -13,3 +13,27 @@ export const cartItemAtomFamily = atomFamily((name: string) => {
 
   return atomWithStorage<CartItem>(item.name, { ...item, quantity: 0 });
 });
+
+export const totalPriceAtom = atom((get) =>
+  get(cartItemsAtom).reduce(
+    (acc, { price, quantity }) => acc + price * quantity,
+    0,
+  ),
+);
+
+export const totalQuantityAtom = atom((get) =>
+  get(cartItemsAtom).reduce((acc, { quantity }) => acc + quantity, 0),
+);
+
+export const sendCartItemsAtom = atom((get) => {
+  const cartItems = get(cartItemsAtom);
+  // 0件の商品は送信しない
+  const filteredCartItems = cartItems
+    .filter((item) => item.quantity > 0)
+    .map(({ name, quantity }) => ({
+      name,
+      quantity,
+    }));
+
+  return JSON.stringify(filteredCartItems);
+});
