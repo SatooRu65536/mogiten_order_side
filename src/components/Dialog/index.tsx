@@ -1,9 +1,9 @@
-import styles from "./index.module.scss";
-import { useAtom, useAtomValue } from "jotai";
-import { dialogAtom } from "../../stores/dialog-atom";
-import { useCallback, useEffect, useRef } from "react";
-import { QRCodeSVG } from "qrcode.react";
-import { sendCartItemsAtom } from "../../stores/item-atom";
+import styles from './index.module.scss';
+import { useAtom, useAtomValue } from 'jotai';
+import { dialogAtom } from '../../stores/dialog-atom';
+import { useCallback, useEffect, useRef } from 'react';
+import { QRCodeSVG } from 'qrcode.react';
+import { sendCartItemsAtom } from '../../stores/item-atom';
 
 export default function Drawer() {
   const [open, setOpen] = useAtom(dialogAtom);
@@ -23,10 +23,10 @@ export default function Drawer() {
     if (dialogElement == undefined) return;
 
     if (open) {
-      if (dialogElement.hasAttribute("open")) return;
+      if (dialogElement.hasAttribute('open')) return;
       dialogElement.showModal();
     } else {
-      if (!dialogElement.hasAttribute("open")) return;
+      if (!dialogElement.hasAttribute('open')) return;
       dialogElement.close();
     }
   }, [open]);

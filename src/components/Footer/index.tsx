@@ -1,9 +1,9 @@
-import styles from "./index.module.scss";
-import { useAtomValue, useSetAtom } from "jotai";
-import { totalPriceAtom, totalQuantityAtom } from "../../stores/item-atom";
-import { IoQrCodeOutline } from "react-icons/io5";
-import { dialogAtom } from "../../stores/dialog-atom";
-import { useCallback } from "react";
+import styles from './index.module.scss';
+import { useAtomValue, useSetAtom } from 'jotai';
+import { totalPriceAtom, totalQuantityAtom } from '../../stores/item-atom';
+import { IoQrCodeOutline } from 'react-icons/io5';
+import { dialogAtom } from '../../stores/dialog-atom';
+import { useCallback } from 'react';
 
 export default function Footer() {
   const setOpen = useSetAtom(dialogAtom);

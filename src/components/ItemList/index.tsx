@@ -1,7 +1,7 @@
-import styles from "./index.module.scss";
-import { itemGroup } from "../../const/items";
-import { entries } from "../../utils";
-import ItemCard from "./ItemCard";
+import styles from './index.module.scss';
+import { itemGroup } from '../../const/items';
+import { entries } from '../../utils';
+import ItemCard from './ItemCard';
 
 export default function ItemList() {
   return (

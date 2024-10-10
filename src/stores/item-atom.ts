@@ -1,7 +1,7 @@
-import { atomFamily, atomWithStorage } from "jotai/utils";
-import { CartItem } from "../types";
-import { itemList } from "../const/items";
-import { atom } from "jotai";
+import { atomFamily, atomWithStorage } from 'jotai/utils';
+import { CartItem } from '../types';
+import { itemList } from '../const/items';
+import { atom } from 'jotai';
 
 export const cartItemsAtom = atom((get) =>
   itemList.map((item) => get(cartItemAtomFamily(item.name))),

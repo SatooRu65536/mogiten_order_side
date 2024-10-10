@@ -1,8 +1,8 @@
-import styles from "./index.module.scss";
-import { Item } from "../../../types";
-import { useAtom } from "jotai";
-import { cartItemAtomFamily } from "../../../stores/item-atom";
-import { useCallback, useEffect } from "react";
+import styles from './index.module.scss';
+import { Item } from '../../../types';
+import { useAtom } from 'jotai';
+import { cartItemAtomFamily } from '../../../stores/item-atom';
+import { useCallback, useEffect } from 'react';
 
 interface Props {
   item: Item;
@@ -33,11 +33,19 @@ export default function ItemCard({ item }: Props) {
       </div>
 
       <div className={styles.actions}>
-        <button className={styles.increment} onClick={handleRemove} disabled={quantity <= 0}>
+        <button
+          className={styles.increment}
+          onClick={handleRemove}
+          disabled={quantity <= 0}
+        >
           -
         </button>
         <span>{quantity}</span>
-        <button className={styles.decrement} onClick={handleAdd} disabled={quantity >= 50}>
+        <button
+          className={styles.decrement}
+          onClick={handleAdd}
+          disabled={quantity >= 50}
+        >
           +
         </button>
       </div>
