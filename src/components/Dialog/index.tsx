@@ -18,7 +18,12 @@ export default function Drawer() {
   const sendCartItems = useAtomValue(sendCartItemsAtom);
   const [orderId, setOrderIdAtom] = useAtom(orderIdAtom);
 
-  const key = sha256(JSON.stringify(sendCartItems)) + Date.now() + Math.random();
+  const key = (
+    sha256(JSON.stringify(sendCartItems)) +
+    Date.now() +
+    Math.random()
+  ).replace('.', '');
+  console.log('key:', key);
   const sendData = JSON.stringify({ order: sendCartItems, key });
   const { connect, send, close } = useWebsocket(
     joinURL(WS_URL, key),
