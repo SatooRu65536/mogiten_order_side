@@ -17,7 +17,25 @@
   .content {
     $size: 256px;
     width: $size;
-    height: $size;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+
+    button {
+      width: fit-content;
+      color: #f4f6ff;
+      padding: 10px 20px;
+      background-color: #10375c;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+
+      &:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+      }
+    }
   }
 }
 

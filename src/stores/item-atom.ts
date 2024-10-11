@@ -35,5 +35,5 @@ export const sendCartItemsAtom = atom((get) => {
       quantity,
     }));
 
-  return JSON.stringify(filteredCartItems);
+  return filteredCartItems;
 });
