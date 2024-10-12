@@ -63,4 +63,3 @@ export const itemGroup = {
 } as const satisfies ItemGroup;
 
 export const itemList = Object.values(itemGroup).flat();
-ï
