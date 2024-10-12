@@ -54,11 +54,11 @@ export const itemGroup = {
       price: 100,
       image: '/sample.png',
     },
-    {
-      name: '緑茶',
-      price: 100,
-      image: '/sample.png',
-    },
+    // {
+    //   name: '緑茶',
+    //   price: 100,
+    //   image: '/sample.png',
+    // },
   ],
 } as const satisfies ItemGroup;
 
